@@ -78,14 +78,16 @@ query_general = st.text_input('Ask a general question related to your paper:', p
 result = []
 with st.form('myform', clear_on_submit=True):
     openai_api_key = st.text_input('OpenAI API Key', type='password', disabled=not (pdf_url and query_paper and query_general))
-    submitted = st.form_submit_button('Submit', disabled=not(pdf_url and query_paper and query_general))
+    submitted1 = st.form_submit_button('Submit', disabled=not(pdf_url and query_paper and query_general))
     serpapi_api_key = st.text_input('SerpAI API Key', type='password', disabled=not (pdf_url and query_paper and query_general))
-    submitted = st.form_submit_button('Submit', disabled=not(pdf_url and query_paper and query_general))
+    submitted2 = st.form_submit_button('Submit', disabled=not(pdf_url and query_paper and query_general))
     if submitted and openai_api_key.startswith('sk-'):
         with st.spinner('Calculating...'):
-            response = generate_response(pdf_url, openai_api_key, serpapi_api_key, query_paper, query_general)
-            result.append(response)
-            del openai_api_key
+            response1, response2 = generate_response(pdf_url, openai_api_key, serpapi_api_key, query_paper, query_general)
+            result.append(response1)
+            result.append(response2)
+            del openai_api_key, serpapi_api_key
 
 if len(result):
-    st.info(response)
+    st.info(response1)
+    st.info(response2)
