@@ -1,0 +1,9 @@
+streamlit 
+langchain 
+openai 
+tiktoken
+docarray
+chromadb
+unstructured
+PyPDF2
+google-search-results
