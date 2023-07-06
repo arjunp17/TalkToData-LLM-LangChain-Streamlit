@@ -19,3 +19,4 @@ This is easily deployable on the Streamlit platform. When using the app you shou
 - [LangChain Streamlit tutorial](https://blog.streamlit.io/langchain-tutorial-4-build-an-ask-the-doc-app/)
 - [LangChain documentation](https://python.langchain.com/docs/get_started/introduction.html)
 - [LangChain for LLM Application Development](https://www.deeplearning.ai/short-courses/langchain-for-llm-application-development/)
+- [SerpAPI](https://serpapi.com/)
