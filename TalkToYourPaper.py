@@ -12,11 +12,13 @@ from langchain.agents import AgentType
 from langchain import SerpAPIWrapper
 
 
-def generate_response(pdf_url, openai_api_key, query_paper, query_general):
+def generate_response(pdf_url, openai_api_key, serpapi_api_key, query_paper, query_general):
     if pdf_url is not None:
-        # Set OpenAI API key
+        # Set OpenAI and Serp API keys
         os.environ['OPENAI_API_KEY'] = openai_api_key
         openai.api_key  = os.getenv('OPENAI_API_KEY')
+        os.environ['SERPAPI_API_KEY'] = serpapi_api_key
+        SerpAPIWrapper.api_key = os.getenv('SERPAPI_API_KEY')
         # Select LLM Model
         llm = ChatOpenAI(temperature = 0.0)
         # Load YouTube video transcript from the given url
@@ -77,9 +79,11 @@ result = []
 with st.form('myform', clear_on_submit=True):
     openai_api_key = st.text_input('OpenAI API Key', type='password', disabled=not (pdf_url and query_paper and query_general))
     submitted = st.form_submit_button('Submit', disabled=not(pdf_url and query_paper and query_general))
+    serpapi_api_key = st.text_input('SerpAI API Key', type='password', disabled=not (pdf_url and query_paper and query_general))
+    submitted = st.form_submit_button('Submit', disabled=not(pdf_url and query_paper and query_general))
     if submitted and openai_api_key.startswith('sk-'):
         with st.spinner('Calculating...'):
-            response = generate_response(pdf_url, openai_api_key, query_paper, query_general)
+            response = generate_response(pdf_url, openai_api_key, serpapi_api_key, query_paper, query_general)
             result.append(response)
             del openai_api_key
 
