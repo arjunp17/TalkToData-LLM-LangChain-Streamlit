@@ -68,9 +68,9 @@ st.title('🎖️🔗 Talk to your scientific paper')
 # URL Text
 pdf_url = st.text_input('Enter your paper URL:', placeholder = 'Paper URL.')
 # Query paper
-query_paper = st.text_input('As a question specific to your paper:', placeholder = 'Please provide a short summary.', disabled=not pdf_url)
+query_paper = st.text_input('Ask a question specific to your paper:', placeholder = 'Type your question.', disabled=not pdf_url)
 # Query general
-query_general = st.text_input('As a general question related to your paper:', placeholder = 'Please provide a short summary.', disabled=not (pdf_url and query_paper))
+query_general = st.text_input('Ask a general question related to your paper:', placeholder = 'Type your question.', disabled=not (pdf_url and query_paper))
 
 # Form input and query
 result = []
