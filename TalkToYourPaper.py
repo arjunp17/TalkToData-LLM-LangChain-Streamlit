@@ -3,7 +3,6 @@ import os
 import openai
 from langchain.chat_models import ChatOpenAI
 from langchain.document_loaders import ArxivLoader, PyPDFLoader, UnstructuredFileLoader, OnlinePDFLoader, UnstructuredPDFLoader
-from IPython.display import display, Markdown
 from langchain.text_splitter import CharacterTextSplitter
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.vectorstores import Chroma
