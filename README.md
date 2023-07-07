@@ -5,7 +5,9 @@ Talk to a scientific paper using the Streamlit app powered by LangChain and LLM
 
 
 
-https://github.com/arjunp17/TalkToData-LLM-LangChain-Streamlit/assets/31438104/d375817b-de81-4156-9a3f-da488059b559
+
+https://github.com/arjunp17/TalkToYourPaper-LLM-LangChain-Streamlit/assets/31438104/f7d20379-f870-466d-9cfe-f6acb43dcc87
+
 
 
 ## Deploy on Streamlit
