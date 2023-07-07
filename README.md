@@ -1,4 +1,4 @@
-# TalkToData-LLM-LangChain-Streamlit
+# TalkToYourPaper-LLM-LangChain-Streamlit
 Talk to a scientific paper using the Streamlit app powered by LangChain and LLM
 - A QA Chain is used to answer from the paper.
 - An Agent with QA Chain and Serp as the tools is constructed to answer general questions related to the paper.
